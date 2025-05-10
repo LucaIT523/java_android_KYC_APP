@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/titleLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/miniai_name"
+            android:textColor="#03282C"
+            android:textSize="39sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iconImageView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/app_logo" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/mainImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/miniai_image"
+        app:layout_constraintBottom_toTopOf="@+id/radioDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLinearLayout" />
+
+    <TextView
+        android:id="@+id/radioDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Please select a source type for verify your ID Card."
+        android:textColor="#03282C"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sourceRadioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- RadioGroup to contain RadioButtons -->
+    <RadioGroup
+        android:id="@+id/sourceRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/confirmDescriptionTextView"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/cameraRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_radio_button_background"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/camera"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Camera"
+            android:textAlignment="viewEnd"
+            android:textColor="#03282C"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <!-- RadioButton 2 -->
+        <RadioButton
+            android:id="@+id/galleryRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_radio_button_background"
+            android:button="@null"
+            android:drawableLeft="@drawable/gallery"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Gallery"
+            android:textAlignment="viewEnd"
+            android:textColor="#03282C"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/confirmDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Please prepare your ID Card."
+        android:textColor="#9903282C"
+        app:layout_constraintBottom_toTopOf="@+id/confirmImageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/confirmImageButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_state_list"
+        android:contentDescription="CONFIRM"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+    <TextView
+        android:id="@+id/confirmTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text = "Continue"
+        app:layout_constraintBottom_toBottomOf="@+id/confirmImageButton"
+        app:layout_constraintEnd_toEndOf="@+id/confirmImageButton"
+        app:layout_constraintStart_toStartOf="@+id/confirmImageButton"
+        app:layout_constraintTop_toTopOf="@+id/confirmImageButton" />
+
+    <ImageView
+        android:id="@+id/idcardImageView"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/idserver_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sourceRadioGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idcardconfirmlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IDCardConfirmActivity">
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="ID Card Verify"
+        android:textSize="32dp"
+        android:textColor="#03282C"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Unknown Name"
+        android:textColor="#03282C"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+    <TextView
+        android:id="@+id/sexTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Unknown Sex"
+        android:textColor="#03282C"
+        android:textSize="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+    <TextView
+        android:id="@+id/ageLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text=", Age"
+        android:textColor="#03282C"
+        android:textSize="21dp"
+        app:layout_constraintStart_toEndOf="@+id/sexTextView"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+    <TextView
+        android:id="@+id/ageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text=" "
+        android:textColor="#000000"
+        android:textSize="21dp"
+        app:layout_constraintStart_toEndOf="@+id/ageLabelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+
+
+    <ImageView
+        android:id="@+id/portraitImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/rectangular_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/portraitImageView"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioDescriptionTextView"
+        app:layout_constraintTop_toBottomOf="@+id/tab_panel"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/radioDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Please select a source type for verify your face."
+        android:textColor="#03282C"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sourceRadioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- RadioGroup to contain RadioButtons -->
+    <RadioGroup
+        android:id="@+id/sourceRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/confirmDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/cameraRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_radio_button_background"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/camera"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Camera"
+            android:textAlignment="viewEnd"
+            android:textColor="#03282C"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- RadioButton 2 -->
+        <RadioButton
+            android:id="@+id/galleryRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_radio_button_background"
+            android:button="@null"
+            android:drawableLeft="@drawable/gallery"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Gallery"
+            android:textAlignment="viewEnd"
+            android:textColor="#03282C"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/confirmDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Please prepare your face or photo."
+        android:textColor="#9903282C"
+        app:layout_constraintBottom_toTopOf="@+id/confirmImageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/confirmImageButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_state_list"
+        android:contentDescription="CONFIRM"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+    <TextView
+        android:id="@+id/confirmTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text = "Continue"
+        app:layout_constraintBottom_toBottomOf="@+id/confirmImageButton"
+        app:layout_constraintEnd_toEndOf="@+id/confirmImageButton"
+        app:layout_constraintStart_toStartOf="@+id/confirmImageButton"
+        app:layout_constraintTop_toTopOf="@+id/confirmImageButton" />
+
+    <ImageView
+        android:id="@+id/faceImageView"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/face_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sourceRadioGroup" />
+</androidx.constraintlayout.widget.ConstraintLayout>

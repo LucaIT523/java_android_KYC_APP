@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MiniAI</string>
+    <string name="miniai_name">MiniAI Verify</string>
+    <string name="idcard_name">ID Card Verify</string>
+    <string name="face_name">Face Lineness Verify</string>
+    <string name="logo_image_text">Logo Image</string>
+    <string name="logo_text">MiniAI Verify App</string>
+    <string name="check_server_text">Checking Server</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

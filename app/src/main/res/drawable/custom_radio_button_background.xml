@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State when the RadioButton is checked (selected) -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#e7fcf9"/> <!-- Background color when selected -->
+            <corners android:radius="8dp" />
+            <stroke
+                android:width="2dp"
+                android:color="#14e5c5" /> <!-- Border color when unselected -->
+        </shape>
+    </item>
+
+    <!-- Default state (unchecked) -->
+    <item android:state_checked="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/> <!-- Background color when unselected -->
+            <corners android:radius="8dp" />
+            <stroke
+                android:width="2dp"
+                android:color="#eae5ef" /> <!-- Border color when unselected -->
+        </shape>
+    </item>
+</selector>
